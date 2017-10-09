@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `System` struct in crate `openvr`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, System">
+
+    <title>openvr::System - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct System</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='index.html'>openvr</a></p><script>window.sidebarCurrent = {name: 'System', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>openvr</a>::<wbr><a class="struct" href=''>System</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/openvr/lib.rs.html#55' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct System(_);</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../openvr/struct.System.html" title="struct openvr::System">System</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#16-304' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.recommended_render_target_size' class="method"><span id='recommended_render_target_size.v' class='invisible'><code>pub fn <a href='#method.recommended_render_target_size' class='fnname'>recommended_render_target_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#20-26' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Provides the game with the minimum size that it should use for its offscreen render target to minimize pixel
+stretching. This size is matched with the projection matrix and distortion function and will change from display
+to display depending on resolution, distortion, and field of view.</p>
+</div><h4 id='method.projection_matrix' class="method"><span id='projection_matrix.v' class='invisible'><code>pub fn <a href='#method.projection_matrix' class='fnname'>projection_matrix</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;eye: <a class="enum" href="../openvr/enum.Eye.html" title="enum openvr::Eye">Eye</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;near_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;far_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#31-33' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the projection matrix to use for the specified eye.</p>
+
+<p>Clip plane distances are in meters.</p>
+</div><h4 id='method.projection_raw' class="method"><span id='projection_raw.v' class='invisible'><code>pub fn <a href='#method.projection_raw' class='fnname'>projection_raw</a>(&amp;self, eye: <a class="enum" href="../openvr/enum.Eye.html" title="enum openvr::Eye">Eye</a>) -&gt; <a class="struct" href="../openvr/system/struct.RawProjection.html" title="struct openvr::system::RawProjection">RawProjection</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#38-44' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the raw project values to use for the specified eye. Most games should use GetProjectionMatrix instead
+of this method, but sometimes a game needs to do something fancy with its projection and can use these values to
+compute its own matrix.</p>
+</div><h4 id='method.eye_to_head_transform' class="method"><span id='eye_to_head_transform.v' class='invisible'><code>pub fn <a href='#method.eye_to_head_transform' class='fnname'>eye_to_head_transform</a>(&amp;self, eye: <a class="enum" href="../openvr/enum.Eye.html" title="enum openvr::Eye">Eye</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#49-51' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the transform between the view space and eye space. Eye space is the per-eye flavor of view space that
+provides stereo disparity. Instead of Model * View * Projection the model is Model * View * Eye *
+Projection. Normally View and Eye will be multiplied together and treated as View in your application.</p>
+</div><h4 id='method.time_since_last_vsync' class="method"><span id='time_since_last_vsync.v' class='invisible'><code>pub fn <a href='#method.time_since_last_vsync' class='fnname'>time_since_last_vsync</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#57-66' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the number of elapsed seconds since the last recorded vsync event and the global number of frames that
+have been rendered. Timing information will come from a vsync timer event in the timer if possible or from the
+application-reported time if that is not available. If no vsync times are available the function will return
+None.</p>
+</div><h4 id='method.device_to_absolute_tracking_pose' class="method"><span id='device_to_absolute_tracking_pose.v' class='invisible'><code>pub fn <a href='#method.device_to_absolute_tracking_pose' class='fnname'>device_to_absolute_tracking_pose</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;origin: <a class="enum" href="../openvr/enum.TrackingUniverseOrigin.html" title="enum openvr::TrackingUniverseOrigin">TrackingUniverseOrigin</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;predicted_seconds_to_photons_from_now: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="type" href="../openvr/type.TrackedDevicePoses.html" title="type openvr::TrackedDevicePoses">TrackedDevicePoses</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#82-89' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Calculates updated poses for all devices.</p>
+
+<p>The pose that the tracker thinks that the HMD will be in at the specified number of seconds into the
+future. Pass 0 to get the state at the instant the method is called. Most of the time the application should
+calculate the time until the photons will be emitted from the display and pass that time into the method.</p>
+
+<p>This is roughly analogous to the inverse of the view matrix in most applications, though many games will need to
+do some additional rotation or translation on top of the rotation and translation provided by the head pose.</p>
+
+<p>Seated experiences should call this method with TrackingUniverseSeated and receive poses relative to the seated
+zero pose. Standing experiences should call this method with TrackingUniverseStanding and receive poses relative
+to the chaperone soft bounds. TrackingUniverseRawAndUncalibrated should probably not be used unless the
+application is the chaperone calibration tool itself, but will provide poses relative to the hardware-specific
+coordinate system in the driver.</p>
+</div><h4 id='method.tracked_device_class' class="method"><span id='tracked_device_class.v' class='invisible'><code>pub fn <a href='#method.tracked_device_class' class='fnname'>tracked_device_class</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a><br>) -&gt; <a class="enum" href="../openvr/enum.TrackedDeviceClass.html" title="enum openvr::TrackedDeviceClass">TrackedDeviceClass</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#91-102' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_tracked_device_connected' class="method"><span id='is_tracked_device_connected.v' class='invisible'><code>pub fn <a href='#method.is_tracked_device_connected' class='fnname'>is_tracked_device_connected</a>(&amp;self, index: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#104-106' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.poll_next_event_with_pose' class="method"><span id='poll_next_event_with_pose.v' class='invisible'><code>pub fn <a href='#method.poll_next_event_with_pose' class='fnname'>poll_next_event_with_pose</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;origin: <a class="enum" href="../openvr/enum.TrackingUniverseOrigin.html" title="enum openvr::TrackingUniverseOrigin">TrackingUniverseOrigin</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../openvr/system/event/struct.EventInfo.html" title="struct openvr::system::event::EventInfo">EventInfo</a>, <a class="struct" href="../openvr/struct.TrackedDevicePose.html" title="struct openvr::TrackedDevicePose">TrackedDevicePose</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#108-119' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.compute_distortion' class="method"><span id='compute_distortion.v' class='invisible'><code>pub fn <a href='#method.compute_distortion' class='fnname'>compute_distortion</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;eye: <a class="enum" href="../openvr/enum.Eye.html" title="enum openvr::Eye">Eye</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;u: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;v: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../openvr/system/struct.DistortionCoordinates.html" title="struct openvr::system::DistortionCoordinates">DistortionCoordinates</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#123-140' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Computes the distortion caused by the optics
+Gets the result of a single distortion value for use in a distortion map. Input UVs are in a single eye&#39;s viewport, and output UVs are for the source render target in the distortion shader.</p>
+</div><h4 id='method.tracked_device_index_for_controller_role' class="method"><span id='tracked_device_index_for_controller_role.v' class='invisible'><code>pub fn <a href='#method.tracked_device_index_for_controller_role' class='fnname'>tracked_device_index_for_controller_role</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;role: <a class="enum" href="../openvr/enum.TrackedControllerRole.html" title="enum openvr::TrackedControllerRole">TrackedControllerRole</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#143-146' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the device index associated with a specific role, for example the left hand or the right hand.</p>
+</div><h4 id='method.get_controller_role_for_tracked_device_index' class="method"><span id='get_controller_role_for_tracked_device_index.v' class='invisible'><code>pub fn <a href='#method.get_controller_role_for_tracked_device_index' class='fnname'>get_controller_role_for_tracked_device_index</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;i: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../openvr/enum.TrackedControllerRole.html" title="enum openvr::TrackedControllerRole">TrackedControllerRole</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#149-156' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the controller type associated with a device index.</p>
+</div><h4 id='method.vulkan_output_device' class="method"><span id='vulkan_output_device.v' class='invisible'><code>pub fn <a href='#method.vulkan_output_device' class='fnname'>vulkan_output_device</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;instance: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../openvr/struct.VkInstance_T.html" title="struct openvr::VkInstance_T">VkInstance_T</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../openvr/struct.VkPhysicalDevice_T.html" title="struct openvr::VkPhysicalDevice_T">VkPhysicalDevice_T</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#158-164' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.bool_tracked_device_property' class="method"><span id='bool_tracked_device_property.v' class='invisible'><code>pub fn <a href='#method.bool_tracked_device_property' class='fnname'>bool_tracked_device_property</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../openvr/type.TrackedDeviceProperty.html" title="type openvr::TrackedDeviceProperty">TrackedDeviceProperty</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a class="struct" href="../openvr/system/struct.TrackedPropertyError.html" title="struct openvr::system::TrackedPropertyError">TrackedPropertyError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#166-172' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.float_tracked_device_property' class="method"><span id='float_tracked_device_property.v' class='invisible'><code>pub fn <a href='#method.float_tracked_device_property' class='fnname'>float_tracked_device_property</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../openvr/type.TrackedDeviceProperty.html" title="type openvr::TrackedDeviceProperty">TrackedDeviceProperty</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="struct" href="../openvr/system/struct.TrackedPropertyError.html" title="struct openvr::system::TrackedPropertyError">TrackedPropertyError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#174-180' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.int32_tracked_device_property' class="method"><span id='int32_tracked_device_property.v' class='invisible'><code>pub fn <a href='#method.int32_tracked_device_property' class='fnname'>int32_tracked_device_property</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../openvr/type.TrackedDeviceProperty.html" title="type openvr::TrackedDeviceProperty">TrackedDeviceProperty</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a class="struct" href="../openvr/system/struct.TrackedPropertyError.html" title="struct openvr::system::TrackedPropertyError">TrackedPropertyError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#182-188' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.uint64_tracked_device_property' class="method"><span id='uint64_tracked_device_property.v' class='invisible'><code>pub fn <a href='#method.uint64_tracked_device_property' class='fnname'>uint64_tracked_device_property</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../openvr/type.TrackedDeviceProperty.html" title="type openvr::TrackedDeviceProperty">TrackedDeviceProperty</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, <a class="struct" href="../openvr/system/struct.TrackedPropertyError.html" title="struct openvr::system::TrackedPropertyError">TrackedPropertyError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#190-196' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.matrix34_tracked_device_property' class="method"><span id='matrix34_tracked_device_property.v' class='invisible'><code>pub fn <a href='#method.matrix34_tracked_device_property' class='fnname'>matrix34_tracked_device_property</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../openvr/type.TrackedDeviceProperty.html" title="type openvr::TrackedDeviceProperty">TrackedDeviceProperty</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a>, <a class="struct" href="../openvr/system/struct.TrackedPropertyError.html" title="struct openvr::system::TrackedPropertyError">TrackedPropertyError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#198-204' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.string_tracked_device_property' class="method"><span id='string_tracked_device_property.v' class='invisible'><code>pub fn <a href='#method.string_tracked_device_property' class='fnname'>string_tracked_device_property</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;property: <a class="type" href="../openvr/type.TrackedDeviceProperty.html" title="type openvr::TrackedDeviceProperty">TrackedDeviceProperty</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CString.html" title="struct std::ffi::c_str::CString">CString</a>, <a class="struct" href="../openvr/system/struct.TrackedPropertyError.html" title="struct openvr::system::TrackedPropertyError">TrackedPropertyError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#206-212' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.hidden_area_mesh' class="method"><span id='hidden_area_mesh.v' class='invisible'><code>pub fn <a href='#method.hidden_area_mesh' class='fnname'>hidden_area_mesh</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;eye: <a class="enum" href="../openvr/enum.Eye.html" title="enum openvr::Eye">Eye</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;ty: <a class="enum" href="../openvr/system/enum.HiddenAreaMeshType.html" title="enum openvr::system::HiddenAreaMeshType">HiddenAreaMeshType</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../openvr/system/struct.HiddenAreaMesh.html" title="struct openvr::system::HiddenAreaMesh">HiddenAreaMesh</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#228-231' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the hidden area mesh for the current HMD.</p>
+
+<p>The pixels covered by this mesh will never be seen by the user after the lens distortion is applied based on
+visibility to the panels. If this HMD does not have a hidden area mesh, None is returned.  This mesh is meant to
+be rendered into the stencil buffer (or into the depth buffer setting nearz) before rendering each eye&#39;s view.
+This will improve performance by letting the GPU early-reject pixels the user will never see before running the
+pixel shader.</p>
+
+<p>NOTE: Render this mesh with backface culling disabled since the winding order of the vertices can
+be different per-HMD or per-eye.</p>
+
+<p>Passing <code>HiddenAreaMeshType::Inverse</code> will produce the visible area mesh that is commonly used in place of
+full-screen quads. The visible area mesh covers all of the pixels the hidden area mesh does not cover.</p>
+</div><h4 id='method.controller_state' class="method"><span id='controller_state.v' class='invisible'><code>pub fn <a href='#method.controller_state' class='fnname'>controller_state</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../openvr/struct.ControllerState.html" title="struct openvr::ControllerState">ControllerState</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#239-248' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Looks up the current input state of a controller.</p>
+
+<p>Returns None if the device is not a controller, or if the user is currently in the system menu.</p>
+
+<p>Needed for rendering controller components (e.g. trigger) accurately wrt. user input using the <code>render_models</code>
+API.</p>
+</div><h4 id='method.controller_state_with_pose' class="method"><span id='controller_state_with_pose.v' class='invisible'><code>pub fn <a href='#method.controller_state_with_pose' class='fnname'>controller_state_with_pose</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;origin: <a class="enum" href="../openvr/enum.TrackingUniverseOrigin.html" title="enum openvr::TrackingUniverseOrigin">TrackingUniverseOrigin</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../openvr/struct.ControllerState.html" title="struct openvr::ControllerState">ControllerState</a>, <a class="struct" href="../openvr/struct.TrackedDevicePose.html" title="struct openvr::TrackedDevicePose">TrackedDevicePose</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#251-264' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>See <code>controller_state</code></p>
+</div><h4 id='method.trigger_haptic_pulse' class="method"><span id='trigger_haptic_pulse.v' class='invisible'><code>pub fn <a href='#method.trigger_haptic_pulse' class='fnname'>trigger_haptic_pulse</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="type" href="../openvr/type.TrackedDeviceIndex.html" title="type openvr::TrackedDeviceIndex">TrackedDeviceIndex</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;axis: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;microseconds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#272-274' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Trigger a single haptic pulse on a controller.</p>
+
+<p>After this call the application may not trigger another haptic pulse on this controller and axis combination for
+5ms.</p>
+
+<p>Vive controller haptics respond to axis 0. OpenVR seems to reject durations longer than 3999us.</p>
+</div><h4 id='method.acknowledge_quit_exiting' class="method"><span id='acknowledge_quit_exiting.v' class='invisible'><code>pub fn <a href='#method.acknowledge_quit_exiting' class='fnname'>acknowledge_quit_exiting</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#279-281' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Call this to acknowledge to the system that <code>Event::Quit</code> has been received and that the process is exiting.</p>
+
+<p>This extends the timeout until the process is killed.</p>
+</div><h4 id='method.acknowledge_quit_user_prompt' class="method"><span id='acknowledge_quit_user_prompt.v' class='invisible'><code>pub fn <a href='#method.acknowledge_quit_user_prompt' class='fnname'>acknowledge_quit_user_prompt</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#287-289' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Call this to tell the system that the user is being prompted to save data.</p>
+
+<p>This halts the timeout and dismisses the dashboard (if it was up). Applications should be sure to actually
+prompt the user to save and then exit afterward, otherwise the user will be left in a confusing state.</p>
+</div><h4 id='method.reset_seated_zero_pose' class="method"><span id='reset_seated_zero_pose.v' class='invisible'><code>pub fn <a href='#method.reset_seated_zero_pose' class='fnname'>reset_seated_zero_pose</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/system/mod.rs.html#301-303' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets the zero pose for the seated tracker coordinate system to the current position and yaw of the HMD.</p>
+
+<p>After <code>reset_seated_zero_pose</code> all <code>device_to_absolute_tracking_pose</code> calls that pass
+<code>TrackingUniverseOrigin::Seated</code> as the origin will be relative to this new zero pose. The new zero coordinate
+system will not change the fact that the Y axis is up in the real world, so the next pose returned from
+<code>device_to_absolute_tracking_pose</code> after a call to <code>reset_seated_zero_pose</code> may not be exactly an identity
+matrix.</p>
+
+<p>NOTE: This function overrides the user&#39;s previously saved seated zero pose and should only be called as the
+result of a user action.  Users are also able to set their seated zero pose via the OpenVR Dashboard.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "openvr";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RenderModels` struct in crate `openvr`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RenderModels">
+
+    <title>openvr::RenderModels - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct RenderModels</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='index.html'>openvr</a></p><script>window.sidebarCurrent = {name: 'RenderModels', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>openvr</a>::<wbr><a class="struct" href=''>RenderModels</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/openvr/lib.rs.html#57' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RenderModels(_);</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../openvr/struct.RenderModels.html" title="struct openvr::RenderModels">RenderModels</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#8-101' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.load_render_model' class="method"><span id='load_render_model.v' class='invisible'><code>pub fn <a href='#method.load_render_model' class='fnname'>load_render_model</a>(&amp;self, name: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>) -&gt; <a class="type" href="../openvr/render_models/type.Result.html" title="type openvr::render_models::Result">Result</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../openvr/render_models/struct.Model.html" title="struct openvr::render_models::Model">Model</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#14-24' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Loads and returns a render model for use in the application. <code>name</code> should be a render model name from the
+<code>RenderModelName_String</code> property or an absolute path name to a render model on disk.</p>
+
+<p>The method returns <code>Ok(None)</code> while the render model is still being loaded. Call it at regular intervals until
+it returns <code>Ok(Some(model))</code>.</p>
+</div><h4 id='method.component_count' class="method"><span id='component_count.v' class='invisible'><code>pub fn <a href='#method.component_count' class='fnname'>component_count</a>(&amp;self, model: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#34-36' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the number of components of the specified render model.</p>
+
+<p>Components are useful when client application wish to draw, label, or otherwise interact with components of tracked objects.
+Examples controller components:
+ renderable things such as triggers, buttons
+ non-renderable things which include coordinate systems such as &#39;tip&#39;, &#39;base&#39;, a neutral controller agnostic hand-pose
+ If all controller components are enumerated and rendered, it will be equivalent to drawing the traditional render model
+ Returns 0 if components not supported, &gt;0 otherwise</p>
+</div><h4 id='method.component_name' class="method"><span id='component_name.v' class='invisible'><code>pub fn <a href='#method.component_name' class='fnname'>component_name</a>(&amp;self, model: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>, component: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CString.html" title="struct std::ffi::c_str::CString">CString</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#42-44' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get the names of available components.</p>
+
+<p><code>component</code> does not correlate to a tracked device index, but is only used for iterating over all available
+components.  If it&#39;s out of range, this function will return None.</p>
+</div><h4 id='method.component_names' class="method"><span id='component_names.v' class='invisible'><code>pub fn <a href='#method.component_names' class='fnname'>component_names</a>(&amp;self, model: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.IntoIter.html" title="struct alloc::vec::IntoIter">IntoIter</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CString.html" title="struct std::ffi::c_str::CString">CString</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#47-50' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets all component names of a given model</p>
+</div><h4 id='method.component_render_model_name' class="method"><span id='component_render_model_name.v' class='invisible'><code>pub fn <a href='#method.component_render_model_name' class='fnname'>component_render_model_name</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;model: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;component: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CString.html" title="struct std::ffi::c_str::CString">CString</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#57-62' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Use this to get the render model name for the specified rendermodel/component combination, to be passed to
+<code>load_render_model</code>.</p>
+
+<p>If the component name is out of range, this function will return None.
+Otherwise, it will return the size of the buffer required for the name.</p>
+</div><h4 id='method.component_state' class="method"><span id='component_state.v' class='invisible'><code>pub fn <a href='#method.component_state' class='fnname'>component_state</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;model: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;component: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;state: &amp;<a class="struct" href="../openvr/struct.ControllerState.html" title="struct openvr::ControllerState">ControllerState</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mode: &amp;<a class="struct" href="../openvr/render_models/struct.ControllerMode.html" title="struct openvr::render_models::ControllerMode">ControllerMode</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../openvr/render_models/struct.ComponentState.html" title="struct openvr::render_models::ComponentState">ComponentState</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#72-83' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Use this to query information about the component, as a function of the controller state.</p>
+
+<p>Returns None if the component is invalid.</p>
+
+<p>Check <code>ComponentState::is_visible()</code> to determine whether the returned component should be rendered.</p>
+
+<p>For dynamic controller components (ex: trigger) values will reflect component motions.
+For static components this will return a consistent value independent of the <code>ControllerState</code>.</p>
+</div><h4 id='method.load_texture' class="method"><span id='load_texture.v' class='invisible'><code>pub fn <a href='#method.load_texture' class='fnname'>load_texture</a>(&amp;self, id: <a class="type" href="../openvr/render_models/type.TextureId.html" title="type openvr::render_models::TextureId">TextureId</a>) -&gt; <a class="type" href="../openvr/render_models/type.Result.html" title="type openvr::render_models::Result">Result</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../openvr/render_models/struct.Texture.html" title="struct openvr::render_models::Texture">Texture</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/render_models.rs.html#90-100' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Loads and returns a texture for use in the application. Texture IDs can be obtained from
+<code>Model::diffuse_texture_id()</code>.</p>
+
+<p>The method returns <code>Ok(None)</code> while the texture is still being loaded. Call it at regular intervals until it
+returns <code>Ok(Some(texture))</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "openvr";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

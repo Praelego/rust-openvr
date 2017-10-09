@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Compositor` struct in crate `openvr`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Compositor">
+
+    <title>openvr::Compositor - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Compositor</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='index.html'>openvr</a></p><script>window.sidebarCurrent = {name: 'Compositor', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>openvr</a>::<wbr><a class="struct" href=''>Compositor</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/openvr/lib.rs.html#56' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Compositor(_);</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../openvr/struct.Compositor.html" title="struct openvr::Compositor">Compositor</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#22-152' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.vulkan_instance_extensions_required' class="method"><span id='vulkan_instance_extensions_required.v' class='invisible'><code>pub fn <a href='#method.vulkan_instance_extensions_required' class='fnname'>vulkan_instance_extensions_required</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CString.html" title="struct std::ffi::c_str::CString">CString</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#23-26' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.vulkan_device_extensions_required' class="method"><span id='vulkan_device_extensions_required.v' class='invisible'><code>pub unsafe fn <a href='#method.vulkan_device_extensions_required' class='fnname'>vulkan_device_extensions_required</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;physical_device: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../openvr/struct.VkPhysicalDevice_T.html" title="struct openvr::VkPhysicalDevice_T">VkPhysicalDevice_T</a><br>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CString.html" title="struct std::ffi::c_str::CString">CString</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#29-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Safety: physical_device must be a valid VkPhysicalDevice</p>
+</div><h4 id='method.set_tracking_space' class="method"><span id='set_tracking_space.v' class='invisible'><code>pub fn <a href='#method.set_tracking_space' class='fnname'>set_tracking_space</a>(&amp;self, origin: <a class="enum" href="../openvr/enum.TrackingUniverseOrigin.html" title="enum openvr::TrackingUniverseOrigin">TrackingUniverseOrigin</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#35-37' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets tracking space returned by WaitGetPoses</p>
+</div><h4 id='method.wait_get_poses' class="method"><span id='wait_get_poses.v' class='invisible'><code>pub fn <a href='#method.wait_get_poses' class='fnname'>wait_get_poses</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../openvr/compositor/struct.WaitPoses.html" title="struct openvr::compositor::WaitPoses">WaitPoses</a>, <a class="struct" href="../openvr/compositor/struct.CompositorError.html" title="struct openvr::compositor::CompositorError">CompositorError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#43-54' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Block until a few milliseconds before the next vsync, then return poses for the next step of rendering and game
+logic.</p>
+
+<p>Poses are relative to the origin set by <code>set_tracking_space</code>.</p>
+</div><h4 id='method.submit' class="method"><span id='submit.v' class='invisible'><code>pub unsafe fn <a href='#method.submit' class='fnname'>submit</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;eye: <a class="enum" href="../openvr/enum.Eye.html" title="enum openvr::Eye">Eye</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;texture: &amp;<a class="struct" href="../openvr/compositor/texture/struct.Texture.html" title="struct openvr::compositor::texture::Texture">Texture</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;bounds: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../openvr/compositor/texture/struct.Bounds.html" title="struct openvr::compositor::texture::Bounds">Bounds</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;pose: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a>&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../openvr/compositor/struct.CompositorError.html" title="struct openvr::compositor::CompositorError">CompositorError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#63-94' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Display the supplied texture for the next frame.</p>
+
+<p>If <code>bounds</code> is None, the entire texture will be used. Lens distortion is handled by the OpenVR implementation.</p>
+
+<h1 id='safety' class='section-header'><a href='#safety'>Safety</a></h1>
+<p>The handles you supply must be valid and comply with the graphics API&#39;s synchronization requirements.</p>
+</div><h4 id='method.post_present_handoff' class="method"><span id='post_present_handoff.v' class='invisible'><code>pub fn <a href='#method.post_present_handoff' class='fnname'>post_present_handoff</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#104-106' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Call immediately after presenting your app&#39;s window (i.e. companion window) to unblock the compositor.</p>
+
+<p>This is an optional call, which only needs to be used if you can&#39;t instead call <code>wait_get_poses</code> immediately
+after submitting frames.  For example, if your engine&#39;s render and game loop are not on separate threads, or
+blocking the render thread until 3ms before the next vsync would introduce a deadlock of some sort.  This
+function tells the compositor that you have finished all rendering after having Submitted buffers for both eyes,
+and it is free to start its rendering work.  This should only be called from the same thread you are rendering
+on.</p>
+</div><h4 id='method.is_fullscreen' class="method"><span id='is_fullscreen.v' class='invisible'><code>pub fn <a href='#method.is_fullscreen' class='fnname'>is_fullscreen</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#109-111' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Return whether the compositor is fullscreen.</p>
+</div><h4 id='method.clear_last_submitted_frame' class="method"><span id='clear_last_submitted_frame.v' class='invisible'><code>pub fn <a href='#method.clear_last_submitted_frame' class='fnname'>clear_last_submitted_frame</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#116-118' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Clears the frame that was sent with the last call to `submit.</p>
+
+<p>This will cause the compositor to show the grid until <code>submit</code> is called again.</p>
+</div><h4 id='method.set_explicit_timing_mode' class="method"><span id='set_explicit_timing_mode.v' class='invisible'><code>pub fn <a href='#method.set_explicit_timing_mode' class='fnname'>set_explicit_timing_mode</a>(&amp;self, mode: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#140-142' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Controls whether the application should flag the time at which the frame begins explicitly</p>
+
+<p><em>Vulkan/D3D12 Only</em>
+There are two purposes for SetExplicitTimingMode:
+1. To get a more accurate GPU timestamp for when the frame begins in Vulkan/D3D12 applications.
+2. (Optional) To avoid having WaitGetPoses access the Vulkan queue so that the queue can be accessed from
+another thread while WaitGetPoses is executing.</p>
+
+<p>More accurate GPU timestamp for the start of the frame is achieved by the application calling
+SubmitExplicitTimingData immediately before its first submission to the Vulkan/D3D12 queue.  This is more
+accurate because normally this GPU timestamp is recorded during WaitGetPoses.  In D3D11, WaitGetPoses queues a
+GPU timestamp write, but it does not actually get submitted to the GPU until the application flushes.  By using
+SubmitExplicitTimingData, the timestamp is recorded at the same place for Vulkan/D3D12 as it is for D3D11,
+resulting in a more accurate GPU time measurement for the frame.</p>
+
+<p>Avoiding WaitGetPoses accessing the Vulkan queue can be achieved using SetExplicitTimingMode as well.  If this
+is desired, the application <em>MUST</em> call PostPresentHandoff itself prior to WaitGetPoses.  If
+SetExplicitTimingMode is true and the application calls PostPresentHandoff, then WaitGetPoses is guaranteed not
+to access the queue.  Note that PostPresentHandoff and SubmitExplicitTimingData will access the queue, so only
+WaitGetPoses becomes safe for accessing the queue from another thread.</p>
+</div><h4 id='method.submit_explicit_timing_data' class="method"><span id='submit_explicit_timing_data.v' class='invisible'><code>pub fn <a href='#method.submit_explicit_timing_data' class='fnname'>submit_explicit_timing_data</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../openvr/compositor/struct.CompositorError.html" title="struct openvr::compositor::CompositorError">CompositorError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/openvr/compositor/mod.rs.html#144-151' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "openvr";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

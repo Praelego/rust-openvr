@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Event` enum in crate `openvr`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Event">
+
+    <title>openvr::system::event::Event - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Event</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../index.html'>openvr</a>::<wbr><a href='../index.html'>system</a>::<wbr><a href='index.html'>event</a></p><script>window.sidebarCurrent = {name: 'Event', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>openvr</a>::<wbr><a href='../index.html'>system</a>::<wbr><a href='index.html'>event</a>::<wbr><a class="enum" href=''>Event</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/openvr/system/event.rs.html#172-331' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Event {
+    TrackedDeviceActivated,
+    TrackedDeviceDeactivated,
+    TrackedDeviceUpdated,
+    TrackedDeviceUserInteractionStarted,
+    TrackedDeviceUserInteractionEnded,
+    IpdChanged,
+    EnterStandbyMode,
+    LeaveStandbyMode,
+    TrackedDeviceRoleChanged,
+    WatchdogWakeUpRequested,
+    LensDistortionChanged,
+    PropertyChanged(<a class="struct" href="../../../openvr/system/event/struct.Property.html" title="struct openvr::system::event::Property">Property</a>),
+    ButtonPress(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>),
+    ButtonUnpress(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>),
+    ButtonTouch(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>),
+    ButtonUntouch(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>),
+    MouseMove(<a class="struct" href="../../../openvr/system/event/struct.Mouse.html" title="struct openvr::system::event::Mouse">Mouse</a>),
+    MouseButtonDown(<a class="struct" href="../../../openvr/system/event/struct.Mouse.html" title="struct openvr::system::event::Mouse">Mouse</a>),
+    MouseButtonUp(<a class="struct" href="../../../openvr/system/event/struct.Mouse.html" title="struct openvr::system::event::Mouse">Mouse</a>),
+    FocusEnter(<a class="struct" href="../../../openvr/system/event/struct.Overlay.html" title="struct openvr::system::event::Overlay">Overlay</a>),
+    FocusLeave(<a class="struct" href="../../../openvr/system/event/struct.Overlay.html" title="struct openvr::system::event::Overlay">Overlay</a>),
+    Scroll(<a class="struct" href="../../../openvr/system/event/struct.Scroll.html" title="struct openvr::system::event::Scroll">Scroll</a>),
+    TouchPadMove(<a class="struct" href="../../../openvr/system/event/struct.TouchPadMove.html" title="struct openvr::system::event::TouchPadMove">TouchPadMove</a>),
+    OverlayFocusChanged(<a class="struct" href="../../../openvr/system/event/struct.Overlay.html" title="struct openvr::system::event::Overlay">Overlay</a>),
+    InputFocusCaptured(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    InputFocusReleased(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    SceneFocusLost(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    SceneFocusGained(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    SceneApplicationChanged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    SceneFocusChanged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    InputFocusChanged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    SceneApplicationSecondaryRenderingStarted(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    HideRenderModels,
+    ShowRenderModels,
+    OverlayShown,
+    OverlayHidden,
+    DashboardActivated,
+    DashboardDeactivated,
+    DashboardThumbSelected,
+    DashboardRequested,
+    ResetDashboard,
+    RenderToast,
+    ImageLoaded,
+    ShowKeyboard,
+    HideKeyboard,
+    OverlayGamepadFocusGained,
+    OverlayGamepadFocusLost,
+    OverlaySharedTextureChanged,
+    DashboardGuideButtonDown,
+    DashboardGuideButtonUp,
+    ScreenshotTriggered,
+    ImageFailed,
+    DashboardOverlayCreated,
+    RequestScreenshot,
+    ScreenshotTaken,
+    ScreenshotFailed,
+    SubmitScreenshotToDashboard,
+    ScreenshotProgressToDashboard,
+    PrimaryDashboardDeviceChanged,
+    Notification_Shown,
+    Notification_Hidden,
+    Notification_BeginInteraction,
+    Notification_Destroyed,
+    Quit(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    ProcessQuit(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    QuitAborted_UserPrompt(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    QuitAcknowledged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>),
+    DriverRequestedQuit,
+    ChaperoneDataHasChanged,
+    ChaperoneUniverseHasChanged,
+    ChaperoneTempDataHasChanged,
+    ChaperoneSettingsHaveChanged,
+    SeatedZeroPoseReset,
+    AudioSettingsHaveChanged,
+    BackgroundSettingHasChanged,
+    CameraSettingsHaveChanged,
+    ReprojectionSettingHasChanged,
+    ModelSkinSettingsHaveChanged,
+    EnvironmentSettingsHaveChanged,
+    PowerSettingsHaveChanged,
+    StatusUpdate,
+    MCImageUpdated,
+    FirmwareUpdateStarted,
+    FirmwareUpdateFinished,
+    KeyboardClosed,
+    KeyboardCharInput(<a class="struct" href="../../../openvr/system/event/struct.Keyboard.html" title="struct openvr::system::event::Keyboard">Keyboard</a>),
+    KeyboardDone,
+    ApplicationTransitionStarted,
+    ApplicationTransitionAborted,
+    ApplicationTransitionNewAppStarted,
+    ApplicationListUpdated,
+    ApplicationMimeTypeLoad,
+    ApplicationTransitionNewAppLaunchComplete,
+    ProcessConnected,
+    ProcessDisconnected,
+    Compositor_MirrorWindowShown,
+    Compositor_MirrorWindowHidden,
+    Compositor_ChaperoneBoundsShown,
+    Compositor_ChaperoneBoundsHidden,
+    TrackedCamera_StartVideoStream,
+    TrackedCamera_StopVideoStream,
+    TrackedCamera_PauseVideoStream,
+    TrackedCamera_ResumeVideoStream,
+    TrackedCamera_EditingSurface,
+    PerformanceTest_EnableCapture,
+    PerformanceTest_DisableCapture,
+    PerformanceTest_FidelityLevel,
+    MessageOverlay_Closed,
+    VendorSpecific(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    Unknown(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.TrackedDeviceActivated" class="variant small-section-header"><a href="#variant.TrackedDeviceActivated" class="anchor field"></a><span id='TrackedDeviceActivated.v' class='invisible'><code>TrackedDeviceActivated</code></span></span><span id="variant.TrackedDeviceDeactivated" class="variant small-section-header"><a href="#variant.TrackedDeviceDeactivated" class="anchor field"></a><span id='TrackedDeviceDeactivated.v' class='invisible'><code>TrackedDeviceDeactivated</code></span></span><span id="variant.TrackedDeviceUpdated" class="variant small-section-header"><a href="#variant.TrackedDeviceUpdated" class="anchor field"></a><span id='TrackedDeviceUpdated.v' class='invisible'><code>TrackedDeviceUpdated</code></span></span><span id="variant.TrackedDeviceUserInteractionStarted" class="variant small-section-header"><a href="#variant.TrackedDeviceUserInteractionStarted" class="anchor field"></a><span id='TrackedDeviceUserInteractionStarted.v' class='invisible'><code>TrackedDeviceUserInteractionStarted</code></span></span><span id="variant.TrackedDeviceUserInteractionEnded" class="variant small-section-header"><a href="#variant.TrackedDeviceUserInteractionEnded" class="anchor field"></a><span id='TrackedDeviceUserInteractionEnded.v' class='invisible'><code>TrackedDeviceUserInteractionEnded</code></span></span><span id="variant.IpdChanged" class="variant small-section-header"><a href="#variant.IpdChanged" class="anchor field"></a><span id='IpdChanged.v' class='invisible'><code>IpdChanged</code></span></span><span id="variant.EnterStandbyMode" class="variant small-section-header"><a href="#variant.EnterStandbyMode" class="anchor field"></a><span id='EnterStandbyMode.v' class='invisible'><code>EnterStandbyMode</code></span></span><span id="variant.LeaveStandbyMode" class="variant small-section-header"><a href="#variant.LeaveStandbyMode" class="anchor field"></a><span id='LeaveStandbyMode.v' class='invisible'><code>LeaveStandbyMode</code></span></span><span id="variant.TrackedDeviceRoleChanged" class="variant small-section-header"><a href="#variant.TrackedDeviceRoleChanged" class="anchor field"></a><span id='TrackedDeviceRoleChanged.v' class='invisible'><code>TrackedDeviceRoleChanged</code></span></span><span id="variant.WatchdogWakeUpRequested" class="variant small-section-header"><a href="#variant.WatchdogWakeUpRequested" class="anchor field"></a><span id='WatchdogWakeUpRequested.v' class='invisible'><code>WatchdogWakeUpRequested</code></span></span><span id="variant.LensDistortionChanged" class="variant small-section-header"><a href="#variant.LensDistortionChanged" class="anchor field"></a><span id='LensDistortionChanged.v' class='invisible'><code>LensDistortionChanged</code></span></span><span id="variant.PropertyChanged" class="variant small-section-header"><a href="#variant.PropertyChanged" class="anchor field"></a><span id='PropertyChanged.v' class='invisible'><code>PropertyChanged(<a class="struct" href="../../../openvr/system/event/struct.Property.html" title="struct openvr::system::event::Property">Property</a>)</code></span></span><span id="variant.ButtonPress" class="variant small-section-header"><a href="#variant.ButtonPress" class="anchor field"></a><span id='ButtonPress.v' class='invisible'><code>ButtonPress(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>)</code></span></span><span id="variant.ButtonUnpress" class="variant small-section-header"><a href="#variant.ButtonUnpress" class="anchor field"></a><span id='ButtonUnpress.v' class='invisible'><code>ButtonUnpress(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>)</code></span></span><span id="variant.ButtonTouch" class="variant small-section-header"><a href="#variant.ButtonTouch" class="anchor field"></a><span id='ButtonTouch.v' class='invisible'><code>ButtonTouch(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>)</code></span></span><span id="variant.ButtonUntouch" class="variant small-section-header"><a href="#variant.ButtonUntouch" class="anchor field"></a><span id='ButtonUntouch.v' class='invisible'><code>ButtonUntouch(<a class="struct" href="../../../openvr/system/event/struct.Controller.html" title="struct openvr::system::event::Controller">Controller</a>)</code></span></span><span id="variant.MouseMove" class="variant small-section-header"><a href="#variant.MouseMove" class="anchor field"></a><span id='MouseMove.v' class='invisible'><code>MouseMove(<a class="struct" href="../../../openvr/system/event/struct.Mouse.html" title="struct openvr::system::event::Mouse">Mouse</a>)</code></span></span><span id="variant.MouseButtonDown" class="variant small-section-header"><a href="#variant.MouseButtonDown" class="anchor field"></a><span id='MouseButtonDown.v' class='invisible'><code>MouseButtonDown(<a class="struct" href="../../../openvr/system/event/struct.Mouse.html" title="struct openvr::system::event::Mouse">Mouse</a>)</code></span></span><span id="variant.MouseButtonUp" class="variant small-section-header"><a href="#variant.MouseButtonUp" class="anchor field"></a><span id='MouseButtonUp.v' class='invisible'><code>MouseButtonUp(<a class="struct" href="../../../openvr/system/event/struct.Mouse.html" title="struct openvr::system::event::Mouse">Mouse</a>)</code></span></span><span id="variant.FocusEnter" class="variant small-section-header"><a href="#variant.FocusEnter" class="anchor field"></a><span id='FocusEnter.v' class='invisible'><code>FocusEnter(<a class="struct" href="../../../openvr/system/event/struct.Overlay.html" title="struct openvr::system::event::Overlay">Overlay</a>)</code></span></span><span id="variant.FocusLeave" class="variant small-section-header"><a href="#variant.FocusLeave" class="anchor field"></a><span id='FocusLeave.v' class='invisible'><code>FocusLeave(<a class="struct" href="../../../openvr/system/event/struct.Overlay.html" title="struct openvr::system::event::Overlay">Overlay</a>)</code></span></span><span id="variant.Scroll" class="variant small-section-header"><a href="#variant.Scroll" class="anchor field"></a><span id='Scroll.v' class='invisible'><code>Scroll(<a class="struct" href="../../../openvr/system/event/struct.Scroll.html" title="struct openvr::system::event::Scroll">Scroll</a>)</code></span></span><span id="variant.TouchPadMove" class="variant small-section-header"><a href="#variant.TouchPadMove" class="anchor field"></a><span id='TouchPadMove.v' class='invisible'><code>TouchPadMove(<a class="struct" href="../../../openvr/system/event/struct.TouchPadMove.html" title="struct openvr::system::event::TouchPadMove">TouchPadMove</a>)</code></span></span><span id="variant.OverlayFocusChanged" class="variant small-section-header"><a href="#variant.OverlayFocusChanged" class="anchor field"></a><span id='OverlayFocusChanged.v' class='invisible'><code>OverlayFocusChanged(<a class="struct" href="../../../openvr/system/event/struct.Overlay.html" title="struct openvr::system::event::Overlay">Overlay</a>)</code></span></span><div class='docblock'><p>global event</p>
+</div><span id="variant.InputFocusCaptured" class="variant small-section-header"><a href="#variant.InputFocusCaptured" class="anchor field"></a><span id='InputFocusCaptured.v' class='invisible'><code>InputFocusCaptured(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><div class='stability'><div class='stab deprecated'>Deprecated</div></div><span id="variant.InputFocusReleased" class="variant small-section-header"><a href="#variant.InputFocusReleased" class="anchor field"></a><span id='InputFocusReleased.v' class='invisible'><code>InputFocusReleased(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><div class='stability'><div class='stab deprecated'>Deprecated</div></div><span id="variant.SceneFocusLost" class="variant small-section-header"><a href="#variant.SceneFocusLost" class="anchor field"></a><span id='SceneFocusLost.v' class='invisible'><code>SceneFocusLost(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.SceneFocusGained" class="variant small-section-header"><a href="#variant.SceneFocusGained" class="anchor field"></a><span id='SceneFocusGained.v' class='invisible'><code>SceneFocusGained(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.SceneApplicationChanged" class="variant small-section-header"><a href="#variant.SceneApplicationChanged" class="anchor field"></a><span id='SceneApplicationChanged.v' class='invisible'><code>SceneApplicationChanged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><div class='docblock'><p>The app actually drawing the scene changed (usually to or from the compositor)</p>
+</div><span id="variant.SceneFocusChanged" class="variant small-section-header"><a href="#variant.SceneFocusChanged" class="anchor field"></a><span id='SceneFocusChanged.v' class='invisible'><code>SceneFocusChanged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><div class='docblock'><p>New app got access to draw the scene</p>
+</div><span id="variant.InputFocusChanged" class="variant small-section-header"><a href="#variant.InputFocusChanged" class="anchor field"></a><span id='InputFocusChanged.v' class='invisible'><code>InputFocusChanged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.SceneApplicationSecondaryRenderingStarted" class="variant small-section-header"><a href="#variant.SceneApplicationSecondaryRenderingStarted" class="anchor field"></a><span id='SceneApplicationSecondaryRenderingStarted.v' class='invisible'><code>SceneApplicationSecondaryRenderingStarted(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.HideRenderModels" class="variant small-section-header"><a href="#variant.HideRenderModels" class="anchor field"></a><span id='HideRenderModels.v' class='invisible'><code>HideRenderModels</code></span></span><div class='docblock'><p>Sent to the scene application to request hiding render models temporarily</p>
+</div><span id="variant.ShowRenderModels" class="variant small-section-header"><a href="#variant.ShowRenderModels" class="anchor field"></a><span id='ShowRenderModels.v' class='invisible'><code>ShowRenderModels</code></span></span><div class='docblock'><p>Sent to the scene application to request restoring render model visibility</p>
+</div><span id="variant.OverlayShown" class="variant small-section-header"><a href="#variant.OverlayShown" class="anchor field"></a><span id='OverlayShown.v' class='invisible'><code>OverlayShown</code></span></span><span id="variant.OverlayHidden" class="variant small-section-header"><a href="#variant.OverlayHidden" class="anchor field"></a><span id='OverlayHidden.v' class='invisible'><code>OverlayHidden</code></span></span><span id="variant.DashboardActivated" class="variant small-section-header"><a href="#variant.DashboardActivated" class="anchor field"></a><span id='DashboardActivated.v' class='invisible'><code>DashboardActivated</code></span></span><span id="variant.DashboardDeactivated" class="variant small-section-header"><a href="#variant.DashboardDeactivated" class="anchor field"></a><span id='DashboardDeactivated.v' class='invisible'><code>DashboardDeactivated</code></span></span><span id="variant.DashboardThumbSelected" class="variant small-section-header"><a href="#variant.DashboardThumbSelected" class="anchor field"></a><span id='DashboardThumbSelected.v' class='invisible'><code>DashboardThumbSelected</code></span></span><div class='docblock'><p>Sent to the overlay manager - data is overlay</p>
+</div><span id="variant.DashboardRequested" class="variant small-section-header"><a href="#variant.DashboardRequested" class="anchor field"></a><span id='DashboardRequested.v' class='invisible'><code>DashboardRequested</code></span></span><div class='docblock'><p>Sent to the overlay manager - data is overlay</p>
+</div><span id="variant.ResetDashboard" class="variant small-section-header"><a href="#variant.ResetDashboard" class="anchor field"></a><span id='ResetDashboard.v' class='invisible'><code>ResetDashboard</code></span></span><div class='docblock'><p>Send to the overlay manager</p>
+</div><span id="variant.RenderToast" class="variant small-section-header"><a href="#variant.RenderToast" class="anchor field"></a><span id='RenderToast.v' class='invisible'><code>RenderToast</code></span></span><div class='docblock'><p>Send to the dashboard to render a toast - data is the notification ID</p>
+</div><span id="variant.ImageLoaded" class="variant small-section-header"><a href="#variant.ImageLoaded" class="anchor field"></a><span id='ImageLoaded.v' class='invisible'><code>ImageLoaded</code></span></span><div class='docblock'><p>Sent to overlays when a SetOverlayRaw or SetOverlayFromFile call finishes loading</p>
+</div><span id="variant.ShowKeyboard" class="variant small-section-header"><a href="#variant.ShowKeyboard" class="anchor field"></a><span id='ShowKeyboard.v' class='invisible'><code>ShowKeyboard</code></span></span><div class='docblock'><p>Sent to keyboard renderer in the dashboard to invoke it</p>
+</div><span id="variant.HideKeyboard" class="variant small-section-header"><a href="#variant.HideKeyboard" class="anchor field"></a><span id='HideKeyboard.v' class='invisible'><code>HideKeyboard</code></span></span><div class='docblock'><p>Sent to keyboard renderer in the dashboard to hide it</p>
+</div><span id="variant.OverlayGamepadFocusGained" class="variant small-section-header"><a href="#variant.OverlayGamepadFocusGained" class="anchor field"></a><span id='OverlayGamepadFocusGained.v' class='invisible'><code>OverlayGamepadFocusGained</code></span></span><div class='docblock'><p>Sent to an overlay when IVROverlay::SetFocusOverlay is called on it</p>
+</div><span id="variant.OverlayGamepadFocusLost" class="variant small-section-header"><a href="#variant.OverlayGamepadFocusLost" class="anchor field"></a><span id='OverlayGamepadFocusLost.v' class='invisible'><code>OverlayGamepadFocusLost</code></span></span><div class='docblock'><p>Send to an overlay when it previously had focus and IVROverlay::SetFocusOverlay is called on something else</p>
+</div><span id="variant.OverlaySharedTextureChanged" class="variant small-section-header"><a href="#variant.OverlaySharedTextureChanged" class="anchor field"></a><span id='OverlaySharedTextureChanged.v' class='invisible'><code>OverlaySharedTextureChanged</code></span></span><span id="variant.DashboardGuideButtonDown" class="variant small-section-header"><a href="#variant.DashboardGuideButtonDown" class="anchor field"></a><span id='DashboardGuideButtonDown.v' class='invisible'><code>DashboardGuideButtonDown</code></span></span><span id="variant.DashboardGuideButtonUp" class="variant small-section-header"><a href="#variant.DashboardGuideButtonUp" class="anchor field"></a><span id='DashboardGuideButtonUp.v' class='invisible'><code>DashboardGuideButtonUp</code></span></span><span id="variant.ScreenshotTriggered" class="variant small-section-header"><a href="#variant.ScreenshotTriggered" class="anchor field"></a><span id='ScreenshotTriggered.v' class='invisible'><code>ScreenshotTriggered</code></span></span><div class='docblock'><p>Screenshot button combo was pressed, Dashboard should request a screenshot</p>
+</div><span id="variant.ImageFailed" class="variant small-section-header"><a href="#variant.ImageFailed" class="anchor field"></a><span id='ImageFailed.v' class='invisible'><code>ImageFailed</code></span></span><div class='docblock'><p>Sent to overlays when a SetOverlayRaw or SetOverlayfromFail fails to load</p>
+</div><span id="variant.DashboardOverlayCreated" class="variant small-section-header"><a href="#variant.DashboardOverlayCreated" class="anchor field"></a><span id='DashboardOverlayCreated.v' class='invisible'><code>DashboardOverlayCreated</code></span></span><span id="variant.RequestScreenshot" class="variant small-section-header"><a href="#variant.RequestScreenshot" class="anchor field"></a><span id='RequestScreenshot.v' class='invisible'><code>RequestScreenshot</code></span></span><div class='docblock'><p>Sent by vrclient application to compositor to take a screenshot</p>
+</div><span id="variant.ScreenshotTaken" class="variant small-section-header"><a href="#variant.ScreenshotTaken" class="anchor field"></a><span id='ScreenshotTaken.v' class='invisible'><code>ScreenshotTaken</code></span></span><div class='docblock'><p>Sent by compositor to the application that the screenshot has been taken</p>
+</div><span id="variant.ScreenshotFailed" class="variant small-section-header"><a href="#variant.ScreenshotFailed" class="anchor field"></a><span id='ScreenshotFailed.v' class='invisible'><code>ScreenshotFailed</code></span></span><div class='docblock'><p>Sent by compositor to the application that the screenshot failed to be taken</p>
+</div><span id="variant.SubmitScreenshotToDashboard" class="variant small-section-header"><a href="#variant.SubmitScreenshotToDashboard" class="anchor field"></a><span id='SubmitScreenshotToDashboard.v' class='invisible'><code>SubmitScreenshotToDashboard</code></span></span><div class='docblock'><p>Sent by compositor to the dashboard that a completed screenshot was submitted</p>
+</div><span id="variant.ScreenshotProgressToDashboard" class="variant small-section-header"><a href="#variant.ScreenshotProgressToDashboard" class="anchor field"></a><span id='ScreenshotProgressToDashboard.v' class='invisible'><code>ScreenshotProgressToDashboard</code></span></span><div class='docblock'><p>Sent by compositor to the dashboard that a completed screenshot was submitted</p>
+</div><span id="variant.PrimaryDashboardDeviceChanged" class="variant small-section-header"><a href="#variant.PrimaryDashboardDeviceChanged" class="anchor field"></a><span id='PrimaryDashboardDeviceChanged.v' class='invisible'><code>PrimaryDashboardDeviceChanged</code></span></span><span id="variant.Notification_Shown" class="variant small-section-header"><a href="#variant.Notification_Shown" class="anchor field"></a><span id='Notification_Shown.v' class='invisible'><code>Notification_Shown</code></span></span><span id="variant.Notification_Hidden" class="variant small-section-header"><a href="#variant.Notification_Hidden" class="anchor field"></a><span id='Notification_Hidden.v' class='invisible'><code>Notification_Hidden</code></span></span><span id="variant.Notification_BeginInteraction" class="variant small-section-header"><a href="#variant.Notification_BeginInteraction" class="anchor field"></a><span id='Notification_BeginInteraction.v' class='invisible'><code>Notification_BeginInteraction</code></span></span><span id="variant.Notification_Destroyed" class="variant small-section-header"><a href="#variant.Notification_Destroyed" class="anchor field"></a><span id='Notification_Destroyed.v' class='invisible'><code>Notification_Destroyed</code></span></span><span id="variant.Quit" class="variant small-section-header"><a href="#variant.Quit" class="anchor field"></a><span id='Quit.v' class='invisible'><code>Quit(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><div class='docblock'><p>The application has been asked to quit</p>
+</div><span id="variant.ProcessQuit" class="variant small-section-header"><a href="#variant.ProcessQuit" class="anchor field"></a><span id='ProcessQuit.v' class='invisible'><code>ProcessQuit(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.QuitAborted_UserPrompt" class="variant small-section-header"><a href="#variant.QuitAborted_UserPrompt" class="anchor field"></a><span id='QuitAborted_UserPrompt.v' class='invisible'><code>QuitAborted_UserPrompt(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.QuitAcknowledged" class="variant small-section-header"><a href="#variant.QuitAcknowledged" class="anchor field"></a><span id='QuitAcknowledged.v' class='invisible'><code>QuitAcknowledged(<a class="struct" href="../../../openvr/system/event/struct.Process.html" title="struct openvr::system::event::Process">Process</a>)</code></span></span><span id="variant.DriverRequestedQuit" class="variant small-section-header"><a href="#variant.DriverRequestedQuit" class="anchor field"></a><span id='DriverRequestedQuit.v' class='invisible'><code>DriverRequestedQuit</code></span></span><div class='docblock'><p>The driver has requested that SteamVR shut down</p>
+</div><span id="variant.ChaperoneDataHasChanged" class="variant small-section-header"><a href="#variant.ChaperoneDataHasChanged" class="anchor field"></a><span id='ChaperoneDataHasChanged.v' class='invisible'><code>ChaperoneDataHasChanged</code></span></span><span id="variant.ChaperoneUniverseHasChanged" class="variant small-section-header"><a href="#variant.ChaperoneUniverseHasChanged" class="anchor field"></a><span id='ChaperoneUniverseHasChanged.v' class='invisible'><code>ChaperoneUniverseHasChanged</code></span></span><span id="variant.ChaperoneTempDataHasChanged" class="variant small-section-header"><a href="#variant.ChaperoneTempDataHasChanged" class="anchor field"></a><span id='ChaperoneTempDataHasChanged.v' class='invisible'><code>ChaperoneTempDataHasChanged</code></span></span><span id="variant.ChaperoneSettingsHaveChanged" class="variant small-section-header"><a href="#variant.ChaperoneSettingsHaveChanged" class="anchor field"></a><span id='ChaperoneSettingsHaveChanged.v' class='invisible'><code>ChaperoneSettingsHaveChanged</code></span></span><span id="variant.SeatedZeroPoseReset" class="variant small-section-header"><a href="#variant.SeatedZeroPoseReset" class="anchor field"></a><span id='SeatedZeroPoseReset.v' class='invisible'><code>SeatedZeroPoseReset</code></span></span><span id="variant.AudioSettingsHaveChanged" class="variant small-section-header"><a href="#variant.AudioSettingsHaveChanged" class="anchor field"></a><span id='AudioSettingsHaveChanged.v' class='invisible'><code>AudioSettingsHaveChanged</code></span></span><span id="variant.BackgroundSettingHasChanged" class="variant small-section-header"><a href="#variant.BackgroundSettingHasChanged" class="anchor field"></a><span id='BackgroundSettingHasChanged.v' class='invisible'><code>BackgroundSettingHasChanged</code></span></span><span id="variant.CameraSettingsHaveChanged" class="variant small-section-header"><a href="#variant.CameraSettingsHaveChanged" class="anchor field"></a><span id='CameraSettingsHaveChanged.v' class='invisible'><code>CameraSettingsHaveChanged</code></span></span><span id="variant.ReprojectionSettingHasChanged" class="variant small-section-header"><a href="#variant.ReprojectionSettingHasChanged" class="anchor field"></a><span id='ReprojectionSettingHasChanged.v' class='invisible'><code>ReprojectionSettingHasChanged</code></span></span><span id="variant.ModelSkinSettingsHaveChanged" class="variant small-section-header"><a href="#variant.ModelSkinSettingsHaveChanged" class="anchor field"></a><span id='ModelSkinSettingsHaveChanged.v' class='invisible'><code>ModelSkinSettingsHaveChanged</code></span></span><span id="variant.EnvironmentSettingsHaveChanged" class="variant small-section-header"><a href="#variant.EnvironmentSettingsHaveChanged" class="anchor field"></a><span id='EnvironmentSettingsHaveChanged.v' class='invisible'><code>EnvironmentSettingsHaveChanged</code></span></span><span id="variant.PowerSettingsHaveChanged" class="variant small-section-header"><a href="#variant.PowerSettingsHaveChanged" class="anchor field"></a><span id='PowerSettingsHaveChanged.v' class='invisible'><code>PowerSettingsHaveChanged</code></span></span><span id="variant.StatusUpdate" class="variant small-section-header"><a href="#variant.StatusUpdate" class="anchor field"></a><span id='StatusUpdate.v' class='invisible'><code>StatusUpdate</code></span></span><span id="variant.MCImageUpdated" class="variant small-section-header"><a href="#variant.MCImageUpdated" class="anchor field"></a><span id='MCImageUpdated.v' class='invisible'><code>MCImageUpdated</code></span></span><span id="variant.FirmwareUpdateStarted" class="variant small-section-header"><a href="#variant.FirmwareUpdateStarted" class="anchor field"></a><span id='FirmwareUpdateStarted.v' class='invisible'><code>FirmwareUpdateStarted</code></span></span><span id="variant.FirmwareUpdateFinished" class="variant small-section-header"><a href="#variant.FirmwareUpdateFinished" class="anchor field"></a><span id='FirmwareUpdateFinished.v' class='invisible'><code>FirmwareUpdateFinished</code></span></span><span id="variant.KeyboardClosed" class="variant small-section-header"><a href="#variant.KeyboardClosed" class="anchor field"></a><span id='KeyboardClosed.v' class='invisible'><code>KeyboardClosed</code></span></span><span id="variant.KeyboardCharInput" class="variant small-section-header"><a href="#variant.KeyboardCharInput" class="anchor field"></a><span id='KeyboardCharInput.v' class='invisible'><code>KeyboardCharInput(<a class="struct" href="../../../openvr/system/event/struct.Keyboard.html" title="struct openvr::system::event::Keyboard">Keyboard</a>)</code></span></span><span id="variant.KeyboardDone" class="variant small-section-header"><a href="#variant.KeyboardDone" class="anchor field"></a><span id='KeyboardDone.v' class='invisible'><code>KeyboardDone</code></span></span><div class='docblock'><p>Sent when DONE button clicked on keyboard</p>
+</div><span id="variant.ApplicationTransitionStarted" class="variant small-section-header"><a href="#variant.ApplicationTransitionStarted" class="anchor field"></a><span id='ApplicationTransitionStarted.v' class='invisible'><code>ApplicationTransitionStarted</code></span></span><span id="variant.ApplicationTransitionAborted" class="variant small-section-header"><a href="#variant.ApplicationTransitionAborted" class="anchor field"></a><span id='ApplicationTransitionAborted.v' class='invisible'><code>ApplicationTransitionAborted</code></span></span><span id="variant.ApplicationTransitionNewAppStarted" class="variant small-section-header"><a href="#variant.ApplicationTransitionNewAppStarted" class="anchor field"></a><span id='ApplicationTransitionNewAppStarted.v' class='invisible'><code>ApplicationTransitionNewAppStarted</code></span></span><span id="variant.ApplicationListUpdated" class="variant small-section-header"><a href="#variant.ApplicationListUpdated" class="anchor field"></a><span id='ApplicationListUpdated.v' class='invisible'><code>ApplicationListUpdated</code></span></span><span id="variant.ApplicationMimeTypeLoad" class="variant small-section-header"><a href="#variant.ApplicationMimeTypeLoad" class="anchor field"></a><span id='ApplicationMimeTypeLoad.v' class='invisible'><code>ApplicationMimeTypeLoad</code></span></span><span id="variant.ApplicationTransitionNewAppLaunchComplete" class="variant small-section-header"><a href="#variant.ApplicationTransitionNewAppLaunchComplete" class="anchor field"></a><span id='ApplicationTransitionNewAppLaunchComplete.v' class='invisible'><code>ApplicationTransitionNewAppLaunchComplete</code></span></span><span id="variant.ProcessConnected" class="variant small-section-header"><a href="#variant.ProcessConnected" class="anchor field"></a><span id='ProcessConnected.v' class='invisible'><code>ProcessConnected</code></span></span><span id="variant.ProcessDisconnected" class="variant small-section-header"><a href="#variant.ProcessDisconnected" class="anchor field"></a><span id='ProcessDisconnected.v' class='invisible'><code>ProcessDisconnected</code></span></span><span id="variant.Compositor_MirrorWindowShown" class="variant small-section-header"><a href="#variant.Compositor_MirrorWindowShown" class="anchor field"></a><span id='Compositor_MirrorWindowShown.v' class='invisible'><code>Compositor_MirrorWindowShown</code></span></span><span id="variant.Compositor_MirrorWindowHidden" class="variant small-section-header"><a href="#variant.Compositor_MirrorWindowHidden" class="anchor field"></a><span id='Compositor_MirrorWindowHidden.v' class='invisible'><code>Compositor_MirrorWindowHidden</code></span></span><span id="variant.Compositor_ChaperoneBoundsShown" class="variant small-section-header"><a href="#variant.Compositor_ChaperoneBoundsShown" class="anchor field"></a><span id='Compositor_ChaperoneBoundsShown.v' class='invisible'><code>Compositor_ChaperoneBoundsShown</code></span></span><span id="variant.Compositor_ChaperoneBoundsHidden" class="variant small-section-header"><a href="#variant.Compositor_ChaperoneBoundsHidden" class="anchor field"></a><span id='Compositor_ChaperoneBoundsHidden.v' class='invisible'><code>Compositor_ChaperoneBoundsHidden</code></span></span><span id="variant.TrackedCamera_StartVideoStream" class="variant small-section-header"><a href="#variant.TrackedCamera_StartVideoStream" class="anchor field"></a><span id='TrackedCamera_StartVideoStream.v' class='invisible'><code>TrackedCamera_StartVideoStream</code></span></span><span id="variant.TrackedCamera_StopVideoStream" class="variant small-section-header"><a href="#variant.TrackedCamera_StopVideoStream" class="anchor field"></a><span id='TrackedCamera_StopVideoStream.v' class='invisible'><code>TrackedCamera_StopVideoStream</code></span></span><span id="variant.TrackedCamera_PauseVideoStream" class="variant small-section-header"><a href="#variant.TrackedCamera_PauseVideoStream" class="anchor field"></a><span id='TrackedCamera_PauseVideoStream.v' class='invisible'><code>TrackedCamera_PauseVideoStream</code></span></span><span id="variant.TrackedCamera_ResumeVideoStream" class="variant small-section-header"><a href="#variant.TrackedCamera_ResumeVideoStream" class="anchor field"></a><span id='TrackedCamera_ResumeVideoStream.v' class='invisible'><code>TrackedCamera_ResumeVideoStream</code></span></span><span id="variant.TrackedCamera_EditingSurface" class="variant small-section-header"><a href="#variant.TrackedCamera_EditingSurface" class="anchor field"></a><span id='TrackedCamera_EditingSurface.v' class='invisible'><code>TrackedCamera_EditingSurface</code></span></span><span id="variant.PerformanceTest_EnableCapture" class="variant small-section-header"><a href="#variant.PerformanceTest_EnableCapture" class="anchor field"></a><span id='PerformanceTest_EnableCapture.v' class='invisible'><code>PerformanceTest_EnableCapture</code></span></span><span id="variant.PerformanceTest_DisableCapture" class="variant small-section-header"><a href="#variant.PerformanceTest_DisableCapture" class="anchor field"></a><span id='PerformanceTest_DisableCapture.v' class='invisible'><code>PerformanceTest_DisableCapture</code></span></span><span id="variant.PerformanceTest_FidelityLevel" class="variant small-section-header"><a href="#variant.PerformanceTest_FidelityLevel" class="anchor field"></a><span id='PerformanceTest_FidelityLevel.v' class='invisible'><code>PerformanceTest_FidelityLevel</code></span></span><span id="variant.MessageOverlay_Closed" class="variant small-section-header"><a href="#variant.MessageOverlay_Closed" class="anchor field"></a><span id='MessageOverlay_Closed.v' class='invisible'><code>MessageOverlay_Closed</code></span></span><span id="variant.VendorSpecific" class="variant small-section-header"><a href="#variant.VendorSpecific" class="anchor field"></a><span id='VendorSpecific.v' class='invisible'><code>VendorSpecific(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id="variant.Unknown" class="variant small-section-header"><a href="#variant.Unknown" class="anchor field"></a><span id='Unknown.v' class='invisible'><code>Unknown(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../openvr/system/event/enum.Event.html" title="enum openvr::system::event::Event">Event</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/openvr/system/event.rs.html#171' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/openvr/system/event.rs.html#171' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../../../openvr/system/event/enum.Event.html" title="enum openvr::system::event::Event">Event</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/openvr/system/event.rs.html#171' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../openvr/system/event/enum.Event.html" title="enum openvr::system::event::Event">Event</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/openvr/system/event.rs.html#171' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../openvr/system/event/enum.Event.html" title="enum openvr::system::event::Event">Event</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/openvr/system/event.rs.html#171' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "openvr";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
